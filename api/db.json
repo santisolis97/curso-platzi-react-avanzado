@@ -65,6 +65,27 @@
       "emoji": "🐠",
       "cover": "https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_fishes.jpg",
       "path": "/photos/fishes"
+    },
+    {
+      "id": 7,
+      "name": "rhino",
+      "emoji": "🦏",
+      "cover": "https://i.pinimg.com/originals/78/7a/d1/787ad1b5d79303f530134b27e30d7459.jpg",
+      "path": "/photos/rhinos"
+    },
+    {
+      "id": 8,
+      "name": "panda",
+      "emoji": "🐼",
+      "cover": "https://static.scientificamerican.com/espanol/cache/file/050D641B-C40F-460A-B892534B0024CB3C_source.jpg?w=590&h=800&4147C8A7-B3A4-4126-9293322177AC2D1C",
+      "path": "/photos/panda"
+    },
+    {
+      "id": 9,
+      "name": "dolphin",
+      "emoji": "🐬",
+      "cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/90/cc/07.jpg",
+      "path": "/photos/dolphin"
     }
   ],
   "photos": [
