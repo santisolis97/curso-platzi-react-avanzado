@@ -1,15 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect , useState} from "react";
 import { Category } from "../Category";
 import {List, Item} from './styles'
-import categories as mockCategories from '../../../api/db.json'
+// import database from '../../../api/db.json'
 
 export const ListOfCategories = () => {
-  const [categories, setCategories] = useState(categories)
-  const db = mockCategories;
+  const [categories, setCategories] = useState([])
+  // console.log(categories);
+
+  useEffect(function () {
+    fetch('https://petgram-santi-server.vercel.app/categories')
+    .then(res=>res.json())
+    .then(response=>{
+      setCategories(response)
+    })
+  })
 
   return (
     <List>
-      {db.categories.map((category) => (
+      {categories.map((category) => (
         <Item key={category.id}>
           {" "}
           <Category {...category} />{" "}
