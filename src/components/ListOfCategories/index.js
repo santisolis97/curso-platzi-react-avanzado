@@ -8,13 +8,13 @@ export const ListOfCategories = () => {
   // console.log(categories);
 
   useEffect(function () {
-    fetch('https://petgram-six.vercel.app/categories')
+    window.fetch('https://petgram-six.vercel.app/categories')
     .then(res=>res.json())
     .then(response=>{
       setCategories(response)
     })
     // console.log(categories)
-  })
+  },[])
 
   return (
     <List>
