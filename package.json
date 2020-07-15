@@ -43,6 +43,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "@bever1337/react-dot-spinner": "0.0.5",
+    "@emotion/core": "^10.0.28",
     "@vercel/client": "^8.2.0",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.3.0",
@@ -51,6 +54,7 @@
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
+    "react-spinners": "^0.9.0",
     "styled-components": "^5.1.1"
   },
   "standard": {

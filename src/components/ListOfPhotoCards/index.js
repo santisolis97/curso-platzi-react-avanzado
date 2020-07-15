@@ -1,16 +1,10 @@
-import React from "react";
-import { PhotoCard } from "../PhotoCard";
-// import {List, Item} from './styles'
-import database from '../../../api/db.json'
+import React from'react'
+import {ListOfPhotoCards} from '../../container/ListOfPhotoCards'
 
-export const ListOfPhotoCards = () => {
-  const db = database;
 
+
+export const ListOfPhotoCardsComponent = () => {
   return (
-    <ul>
-      {db.photos.map(photo => (
-          <PhotoCard key={photo.id} {...photo} />
-      ))}
-    </ul>
-  );
-};
+    <ListOfPhotoCards/>
+  )
+}

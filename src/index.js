@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from './App'
 import ApolloClient from 'apollo-boost'
-import {ApolloProvider } from 'react-apollo'
+import { ApolloProvider } from '@apollo/react-hooks'
 
+import { App } from './App'
 
 const client = new ApolloClient({
   uri:'https://petgram-six.vercel.app/graphql'
 })
 ReactDOM.render(
-<ApolloProvider>
+<ApolloProvider client={client}>
   <App/> 
 
 </ApolloProvider>

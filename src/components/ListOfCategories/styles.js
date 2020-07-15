@@ -26,6 +26,11 @@ export const List = styled.ul`
   `}
 `
 
+export const Cont = styled.div`
+    text-align: center;
+
+`
+
 
 export const Item = styled.li`
   padding: 0 8px;

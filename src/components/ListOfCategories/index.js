@@ -1,7 +1,8 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { Category } from "../Category";
 import { List, Item } from "./styles";
-// import database from '../../../api/db.json'
+// import { DotSpinner } from '@bever1337/react-dot-spinner';
+import { Spinner } from "../Spinner";
 
 function useCategoriesData(){
   const [categories, setCategories] = useState([]);
@@ -47,7 +48,10 @@ export const ListOfCategories = () => {
   );
   
   if (loading) {
-    return 'Cargando...'
+    return <div>
+      
+      <Spinner/>
+      </div>
   }
 
   return (
