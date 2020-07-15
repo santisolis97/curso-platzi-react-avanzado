@@ -8,11 +8,8 @@ export const ListOfPhotoCards = () => {
 
   return (
     <ul>
-      {db.photos.map((photo) => (
-        <li key={photo.id}>
-          {" "}
-          <PhotoCard {...photo} />{" "}
-        </li>
+      {db.photos.map(photo => (
+          <PhotoCard key={photo.id} {...photo} />
       ))}
     </ul>
   );
