@@ -3,18 +3,28 @@ import { Category } from "../Category";
 import { List, Item } from "./styles";
 // import database from '../../../api/db.json'
 
-export const ListOfCategories = () => {
+function useCategoriesData(){
   const [categories, setCategories] = useState([]);
-  const [showFixed, setShowFixed] = useState(false);
+  const [loading, setLoading] = useState([false]);
+  
+
   useEffect(function () {
+    setLoading(true)
     window
       .fetch("https://petgram-six.vercel.app/categories")
       .then((res) => res.json())
       .then((response) => {
         setCategories(response);
+        setLoading(false)
       });
     // console.log(categories)
   }, []);
+  return{categories, loading}
+}
+
+export const ListOfCategories = () => {
+  const {categories,loading} = useCategoriesData();
+  const [showFixed, setShowFixed] = useState(false);
 
   useEffect(function () {
     const onScroll = (e) => {
@@ -25,8 +35,8 @@ export const ListOfCategories = () => {
     return () => document.removeEventListener('scroll', onScroll)
   }, [showFixed])
 
-  const renderList = (fixed) => (
-    <List className={fixed ? "fixed" : ""}>
+  const renderList = (fixed, loading) => (
+    <List fixed={fixed} loading={loading}>
       {categories.map((category) => (
         <Item key={category.id}>
           {" "}
@@ -35,10 +45,15 @@ export const ListOfCategories = () => {
       ))}
     </List>
   );
+  
+  if (loading) {
+    return 'Cargando...'
+  }
 
   return (
     <Fragment>
       {renderList()}
+
       {showFixed && renderList(true)}
     </Fragment>
   );
