@@ -10,13 +10,13 @@ import { Spinner } from '../components/Spinner';
 export const ListOfPhotoCards = () => {
     const { loading, error, data } = useQuery(getPhotos, {variables: {categoryId:2}})
   
-    if (loading) return <Fragment>  <br/> <Spinner/></Fragment>
+    if (loading) return <PhotoCard loading={loading} />
     if (error) return <p>Error</p>
   
     return (
       <ul>
           {data.photos.map((photoCard, id) => (
-          <PhotoCard key={id} {...photoCard} />
+          <PhotoCard key={id} {...photoCard} loading={loading} />
         ))}
       </ul>
     )
