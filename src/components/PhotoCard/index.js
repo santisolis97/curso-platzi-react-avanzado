@@ -7,7 +7,7 @@ import {
   RectShape,
   RoundShape,
 } from "react-placeholder/lib/placeholders";
-
+import {Link} from '@reach/router'
 import ReactPlaceholder from "react-placeholder";
 import { FavButton } from "../FavButton";
 import { ToggleLikeMutation } from "../../container/ToggleLikeMutation";
@@ -44,11 +44,11 @@ export const PhotoCard = ({ id, likes = 0, src, loading }) => {
           customPlaceholder={photoCardSkeleton}
         >
           <React.Fragment>
-            <a href={`/?detail=${id}`}>
+            <Link to={`/detail/${id}`}>
               <ImgWrapper>
                 <Img src={src} />
               </ImgWrapper>
-            </a>
+            </Link>
 
             <ToggleLikeMutation>
             {
