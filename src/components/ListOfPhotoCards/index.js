@@ -1,10 +1,10 @@
-import React from'react'
-import {ListOfPhotoCards} from '../../container/ListOfPhotoCards'
+import React from 'react'
+import { PhotoCard } from '../PhotoCard'
 
-
-
-export const ListOfPhotoCardsComponent = () => {
+export const ListOfPhotoCardsComponent = ({ data: { photos = [] } } = {}) => {
   return (
-    <ListOfPhotoCards/>
+    <ul>
+      {photos.map(photo => <PhotoCard key={photo.id} {...photo} />)}
+    </ul>
   )
 }
