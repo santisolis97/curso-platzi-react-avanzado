@@ -2,14 +2,11 @@ import React, { Fragment } from 'react'
 import { ListOfCategories } from '../components/ListOfCategories'
 import { ListOfPhotoCards } from '../container/ListOfPhotoCards'
 
-export const Home = ({ id }) => {
-    return(
-        <Fragment>
-          <ListOfCategories />
-          <br />
-          <hr />
-          <br />
-          <ListOfPhotoCards categoryId={id} />
-        </Fragment>
-    )
+export const Home = ({ categoryId }) => {
+  return (
+    <Fragment>
+      <ListOfCategories />
+      <ListOfPhotoCards categoryId={categoryId} />
+    </Fragment>
+  )
 }

@@ -6,6 +6,7 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   overflow: scroll;
+  
   width: 100%;
   ${props => props.fixed && css`
   {
